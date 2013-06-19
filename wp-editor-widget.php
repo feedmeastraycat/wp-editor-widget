@@ -4,7 +4,7 @@ Plugin Name: WP Editor Widget
 Plugin URI: http://oddalice.com/
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.1.0
+Version: 0.1.1
 Author URI: http://www.feedmeastraycat.net/
 */
 
@@ -22,7 +22,15 @@ add_action('widgets_init', array('WPEditorWidget', 'widgets_init'));
  */
 class WPEditorWidget
 {
-
+	
+	/**
+	 * @var string
+	 */
+	const VERSION = "0.1.1";
+	
+	/**
+	 * @var string
+	 */
 	const TEXTDOMAIN = "wpeditorwidget";
 	
 	/**
@@ -30,10 +38,10 @@ class WPEditorWidget
 	 */
 	public static function admin_init()
 	{
-		wp_register_script('wp-editor-widget-js', plugins_url('assets/js/admin.js', __FILE__));
+		wp_register_script('wp-editor-widget-js', plugins_url('assets/js/admin.js', __FILE__), array('jquery'), self::VERSION);
 		wp_enqueue_script('wp-editor-widget-js');
 		
-		wp_register_style('wp-editor-widget-css', plugins_url('assets/css/admin.css', __FILE__));
+		wp_register_style('wp-editor-widget-css', plugins_url('assets/css/admin.css', __FILE__), array(), self::VERSION);
 		wp_enqueue_style('wp-editor-widget-css');
 	}
 	
@@ -75,7 +83,8 @@ class WPEditorWidget
 /**
  * Adds WP_Editor_Widget widget.
  */
-class WP_Editor_Widget extends WP_Widget {
+class WP_Editor_Widget extends WP_Widget 
+{
 
 	/**
 	 * Register widget with WordPress.
@@ -96,7 +105,8 @@ class WP_Editor_Widget extends WP_Widget {
 	 * @param array $args Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
-	public function widget($args, $instance) {
+	public function widget($args, $instance) 
+	{
 		extract( $args );
 		
 		$title = apply_filters('wp_editor_widget_title', $instance['title']);
@@ -121,15 +131,16 @@ class WP_Editor_Widget extends WP_Widget {
 	 *
 	 * @param array $instance Previously saved values from database.
 	 */
-	public function form( $instance ) {
-		if (isset( $instance[ 'title' ])) {
+	public function form($instance) 
+	{
+		if (isset($instance['title'])) {
 			$title = $instance['title'];
 		}
 		else {
 			$title = __('New title', WPEditorWidget::TEXTDOMAIN);
 		}
 		
-		if (isset( $instance['content'])) {
+		if (isset($instance['content'])) {
 			$content = $instance['content'];
 		}
 		else {
@@ -164,7 +175,8 @@ class WP_Editor_Widget extends WP_Widget {
 	 *
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $new_instance, $old_instance ) {
+	public function update($new_instance, $old_instance) 
+	{
 		$instance = array();
 		
 		$instance['title'] = (!empty($new_instance['title']) ? strip_tags( $new_instance['title']):'');
