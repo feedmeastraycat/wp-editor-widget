@@ -2,8 +2,8 @@
 Contributors: feedmeastraycat
 Tags: widget, wysiwyg, editor
 Requires at least: 3.5.1
-Tested up to: 3.5.1
-Stable tag: 0.1.1
+Tested up to: 3.5.2
+Stable tag: 0.2.0
 License: MIT
 
 	WP Editor Widget adds a WYSIWYG widget using the wp_editor().
@@ -29,6 +29,11 @@ adding a custom post type for each widget.
 2. Activate the pluing under 'Plugins' in the WordPress admin area
 
 == Changelog ==
+
+= 0.2.0 =
+* Changed the WYSIWYG overlay button from "Update and close" to a primary button called "Save and close"
+* Changed so that the widget is saved when closing the WYSIWYG overlay
+* Added pot translation file and Swedish translation (contact me if you wish to help translate, david.martensson@gmail.com)
 
 = 0.1.1 =
 * CSS fix for widget editor close button

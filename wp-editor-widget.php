@@ -4,13 +4,14 @@ Plugin Name: WP Editor Widget
 Plugin URI: http://oddalice.com/
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.1.1
+Version: 0.2.0
 Author URI: http://www.feedmeastraycat.net/
 */
 
 
 
 // Setup actions
+add_action('init', array('WPEditorWidget', 'init'));
 add_action('admin_init', array('WPEditorWidget', 'admin_init'));
 add_action('widgets_admin_page', array('WPEditorWidget', 'widgets_admin_page'), 100);
 add_action('widgets_init', array('WPEditorWidget', 'widgets_init'));
@@ -26,12 +27,21 @@ class WPEditorWidget
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.1.1";
+	const VERSION = "0.2.0";
 	
 	/**
 	 * @var string
 	 */
 	const TEXTDOMAIN = "wpeditorwidget";
+	
+	/**
+	 * Action: init
+	 */
+	public static function init()
+	{
+		// Load translations
+		load_plugin_textdomain(self::TEXTDOMAIN, false, dirname(plugin_basename(__FILE__)).'/langs/');
+	}
 	
 	/**
 	 * Action: admin_init
@@ -60,7 +70,7 @@ class WPEditorWidget
 				wp_editor('', 'wp-editor-widget', $settings);
 				?>
 				<p>
-					<a href="javascript:WPEditorWidget.updateWidgetAndCloseEditor();" class="button"><?php _e('Update and close', self::TEXTDOMAIN) ?></a>
+					<a href="javascript:WPEditorWidget.updateWidgetAndCloseEditor(true);" class="button button-primary"><?php _e('Save and close', self::TEXTDOMAIN) ?></a>
 				</p>
 			</div>
 		</div>

@@ -41,6 +41,7 @@ WPEditorWidget = {
 	 */
 	updateWidgetAndCloseEditor: function() {
 		jQuery('#'+ this.currentContentId).val(tinyMCE.editors['wp-editor-widget'].getContent());
+		wpWidgets.save(jQuery('#'+ this.currentContentId).closest('div.widget'), 0, 1, 0);
 		this.hideEditor();
 	}
 	
