@@ -52,7 +52,7 @@
 	(-webkit-min-device-pixel-ratio: 1.25),
 	(min-resolution: 120dpi) {
 		#wp-editor-widget-container .icon {
-			background-image: url(../images/uploader-icons-2x.png);
+			background-image: url(../../../../../wp-includes/images/uploader-icons-2x.png);
 			background-size: 134px 15px;
 		}
 	}
