@@ -33,14 +33,26 @@ WPEditorWidget = {
 	 * Set editor content
 	 */
 	setEditorContent: function(contentId) {
-		tinyMCE.editors['wp-editor-widget'].setContent(jQuery('#'+ contentId).val());
+		var editor = tinyMCE.EditorManager.get('wp-editor-widget');
+		if (typeof editor == "undefined") {
+			jQuery('#wp-editor-widget').val(jQuery('#'+ contentId).val());
+		}
+		else {
+			editor.setContent(jQuery('#'+ contentId).val());
+		}
 	},
 	
 	/**
 	 * Update widget and close the editor
 	 */
 	updateWidgetAndCloseEditor: function() {
-		jQuery('#'+ this.currentContentId).val(tinyMCE.editors['wp-editor-widget'].getContent());
+		var editor = tinyMCE.EditorManager.get('wp-editor-widget');
+		if (typeof editor == "undefined") {
+			jQuery('#'+ this.currentContentId).val(jQuery('#wp-editor-widget').val());
+		}
+		else {
+			jQuery('#'+ this.currentContentId).val(editor.getContent());
+		}
 		wpWidgets.save(jQuery('#'+ this.currentContentId).closest('div.widget'), 0, 1, 0);
 		this.hideEditor();
 	}

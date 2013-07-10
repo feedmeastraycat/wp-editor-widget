@@ -34,7 +34,7 @@
 	background-position: -100px 0;
 }
 #wp-editor-widget-container .icon {
-	background-image: url(../../../../wp-includes/images/uploader-icons.png);
+	background-image: url(../../../../../wp-includes/images/uploader-icons.png);
 	background-repeat: no-repeat;
 }
 #wp-editor-widget-container .close:active {
