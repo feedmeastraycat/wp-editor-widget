@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Editor Widget 0.2.0\n"
+"Project-Id-Version: WP Editor Widget 0.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-28 10:58+0100\n"
-"PO-Revision-Date: 2013-06-28 10:58+0100\n"
+"POT-Creation-Date: 2013-08-08 11:00+0100\n"
+"PO-Revision-Date: 2013-08-08 11:00+0100\n"
 "Last-Translator: DMR <david.martensson@gmail.com>\n"
 "Language-Team: Feed Me A Stray Cat <david.martensson@gmail.com>\n"
 "Language: en\n"
@@ -16,34 +16,36 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: wp-editor-widget.php:54
+#: wp-editor-widget.php:72
 msgid "Close"
 msgstr ""
 
-#: wp-editor-widget.php:63
+#: wp-editor-widget.php:81
 msgid "Save and close"
 msgstr ""
 
-#: wp-editor-widget.php:95
-msgid "WP Editor Widget"
+#: wp-editor-widget.php:113
+msgid "Rich text"
 msgstr ""
 
-#: wp-editor-widget.php:96
-msgid "Adds an WP Editor Widget for WYSIWYG content."
-msgstr ""
-
-#: wp-editor-widget.php:140
-msgid "New title"
-msgstr ""
-
-#: wp-editor-widget.php:154
-msgid "Title"
+#: wp-editor-widget.php:114
+msgid ""
+"Arbitrary text, HTML or rich text through the standard WordPress visual "
+"editor."
 msgstr ""
 
 #: wp-editor-widget.php:158
+msgid "New title"
+msgstr ""
+
+#: wp-editor-widget.php:172
+msgid "Title"
+msgstr ""
+
+#: wp-editor-widget.php:176
 msgid "Edit content"
 msgstr ""
 
-#: wp-editor-widget.php:162
+#: wp-editor-widget.php:180
 msgid "Output title"
 msgstr ""

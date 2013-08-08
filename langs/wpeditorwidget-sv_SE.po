@@ -1,11 +1,12 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Editor Widget 0.2.0\n"
+"Project-Id-Version: WP Editor Widget 0.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-28 10:58+0100\n"
-"PO-Revision-Date: 2013-06-28 11:01+0100\n"
+"POT-Creation-Date: 2013-08-08 11:00+0100\n"
+"PO-Revision-Date: 2013-08-08 11:01+0100\n"
 "Last-Translator: DMR <david.martensson@gmail.com>\n"
 "Language-Team: Feed Me A Stray Cat <david.martensson@gmail.com>\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,37 +14,46 @@ msgstr ""
 "esc_html__;esc_html_e;_x;_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
 "X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 1.5.5\n"
-"Language: sv_SE\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: wp-editor-widget.php:54
+#: wp-editor-widget.php:72
 msgid "Close"
 msgstr "Stäng"
 
-#: wp-editor-widget.php:63
+#: wp-editor-widget.php:81
 msgid "Save and close"
 msgstr "Spara och stäng"
 
-#: wp-editor-widget.php:95
-msgid "WP Editor Widget"
-msgstr "WP Editor Widget"
+#: wp-editor-widget.php:113
+msgid "Rich text"
+msgstr "Formaterad text"
 
-#: wp-editor-widget.php:96
-msgid "Adds an WP Editor Widget for WYSIWYG content."
-msgstr "Skapar en ny WP Editor Widget för WYSIWYG-innehåll."
+#: wp-editor-widget.php:114
+msgid ""
+"Arbitrary text, HTML or rich text through the standard WordPress visual "
+"editor."
+msgstr ""
+"Godtycklig text, HTML eller formaterad text via WordPress visuella "
+"textredigerare."
 
-#: wp-editor-widget.php:140
+#: wp-editor-widget.php:158
 msgid "New title"
 msgstr "Ny titel"
 
-#: wp-editor-widget.php:154
+#: wp-editor-widget.php:172
 msgid "Title"
-msgstr "Titel"
+msgstr "Tite"
 
-#: wp-editor-widget.php:158
+#: wp-editor-widget.php:176
 msgid "Edit content"
 msgstr "Redigera innehåll"
 
-#: wp-editor-widget.php:162
+#: wp-editor-widget.php:180
 msgid "Output title"
 msgstr "Skriv ut titel"
+
+#~ msgid "WP Editor Widget"
+#~ msgstr "WP Editor Widget"
+
+#~ msgid "Adds an WP Editor Widget for WYSIWYG content."
+#~ msgstr "Skapar en ny WP Editor Widget för WYSIWYG-innehåll."

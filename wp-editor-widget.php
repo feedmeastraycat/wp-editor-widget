@@ -4,7 +4,7 @@ Plugin Name: WP Editor Widget
 Plugin URI: http://oddalice.com/
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.2.1
+Version: 0.3.1
 Author URI: http://www.feedmeastraycat.net/
 */
 
@@ -13,6 +13,7 @@ Author URI: http://www.feedmeastraycat.net/
 // Setup actions
 add_action('init', array('WPEditorWidget', 'init'));
 add_action('admin_init', array('WPEditorWidget', 'admin_init'));
+add_action('plugins_loaded', array('WPEditorWidget', 'plugins_loaded'));
 add_action('widgets_admin_page', array('WPEditorWidget', 'widgets_admin_page'), 100);
 add_action('widgets_init', array('WPEditorWidget', 'widgets_init'));
 
@@ -27,7 +28,7 @@ class WPEditorWidget
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.2.1";
+	const VERSION = "0.3.1";
 	
 	/**
 	 * @var string
@@ -39,8 +40,6 @@ class WPEditorWidget
 	 */
 	public static function init()
 	{
-		// Load translations
-		load_plugin_textdomain(self::TEXTDOMAIN, false, dirname(plugin_basename(__FILE__)).'/langs/');
 	}
 	
 	/**
@@ -53,6 +52,15 @@ class WPEditorWidget
 		
 		wp_register_style('wp-editor-widget-css', plugins_url('assets/css/admin.css', __FILE__), array(), self::VERSION);
 		wp_enqueue_style('wp-editor-widget-css');
+	}
+	
+	/**
+	 * Action: plugins_loaded
+	 */
+	public static function plugins_loaded()
+	{
+		// Load translations
+		load_plugin_textdomain(self::TEXTDOMAIN, false, dirname(plugin_basename(__FILE__)).'/langs/');
 	}
 	
 	/**
@@ -102,8 +110,8 @@ class WP_Editor_Widget extends WP_Widget
 	public function __construct() {
 		parent::__construct(
 	 		'wp_editor_widget',
-			__('WP Editor Widget', WPEditorWidget::TEXTDOMAIN),
-			array('description' => __('Adds an WP Editor Widget for WYSIWYG content.', WPEditorWidget::TEXTDOMAIN))
+			__('Rich text', WPEditorWidget::TEXTDOMAIN),
+			array('description' => __('Arbitrary text, HTML or rich text through the standard WordPress visual editor.', WPEditorWidget::TEXTDOMAIN))
 		);
 	}
 
