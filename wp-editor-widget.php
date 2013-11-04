@@ -4,7 +4,7 @@ Plugin Name: WP Editor Widget
 Plugin URI: http://oddalice.com/
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.3.1
+Version: 0.4.0
 Author URI: http://www.feedmeastraycat.net/
 */
 
@@ -16,6 +16,14 @@ add_action('admin_init', array('WPEditorWidget', 'admin_init'));
 add_action('plugins_loaded', array('WPEditorWidget', 'plugins_loaded'));
 add_action('widgets_admin_page', array('WPEditorWidget', 'widgets_admin_page'), 100);
 add_action('widgets_init', array('WPEditorWidget', 'widgets_init'));
+// Setup filters
+add_filter('wp_editor_widget_content', 'wptexturize');
+add_filter('wp_editor_widget_content', 'convert_smilies');
+add_filter('wp_editor_widget_content', 'convert_chars');
+add_filter('wp_editor_widget_content', 'wpautop');
+add_filter('wp_editor_widget_content', 'shortcode_unautop');
+add_filter('wp_editor_widget_content', 'prepend_attachment');
+add_filter('wp_editor_widget_content', 'do_shortcode', 11);
 
 
 
@@ -28,7 +36,7 @@ class WPEditorWidget
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.3.1";
+	const VERSION = "0.4.0";
 	
 	/**
 	 * @var string
