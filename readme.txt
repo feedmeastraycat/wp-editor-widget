@@ -13,14 +13,16 @@ License: MIT
 This plugin adds a rich text widget where the content is edited using the standard WordPress visual editor which most users already are familiar with. 
 It uses the WP core function wp_editor() without adding a custom post type post for each widget making the widget quicker and simpler to edit.
 
+Feel free to help with developement or issue reporting on [Github](https://github.com/feedmeastraycat/wp-editor-widget)!
+
 == Screenshots ==
 
-1. The plugin adds a widget called "WP Editor Widget".
+1. The plugin adds a widget called "Rich text".
 2. In the widget you can add a title, edit the content through a link and choose to output the title or not.
-3. When you click the "Edit content" link the WP Editor appears above the content, much like the Add media button. Click "Update and close" and then "Save" to save your content in the widget.
-4. The widget as displayed in Twenty Twelve.
+3. When you click the "Edit content" link the WP Editor appears above the content, much like the Add media button. Click "Save and close" to save your content in the widget.
+4. The widget as displayed in Twenty Fourteen.
 5. You can choose to display the title.
-6. The widget as displayed in Twenty Twelve with title output turned on.
+6. The widget as displayed in Twenty Fourteen with title output turned on.
 
 == Installation ==
 
