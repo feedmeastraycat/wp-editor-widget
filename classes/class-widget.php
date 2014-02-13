@@ -16,12 +16,26 @@ class WP_Editor_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 
-		parent::__construct(
-	 		'wp_editor_widget',
-			__( 'Rich text', 'wp-editor-widget' ),
+		$widget_ops = apply_filters(
+			'wp_editor_widget_ops',
 			array(
-				'description' => __( 'Arbitrary text, HTML or rich text through the standard WordPress visual editor.', 'wp-editor-widget' ),
+				'classname' 	=> 'wp-editor-widget',
+				'description' 	=> __( 'Arbitrary text, HTML or rich text through the standard WordPress visual editor.', 'wp-editor-widget' ),
 			)
+		);
+
+ 	 	$control_ops = apply_filters(
+			'wp_editor_widget_control_ops',
+			array(
+				'id_base' 	=> 'wp-editor-widget',
+			)
+		);
+
+		parent::__construct(
+			'wp_editor_widget',
+			__( 'Rich text', 'wp-editor-widget' ),
+			$widget_ops,
+			$control_ops
 		);
 
 	} // END __construct()
@@ -114,7 +128,9 @@ class WP_Editor_Widget extends WP_Widget {
 		$instance['content']		= ( !empty($new_instance['content']) ? $new_instance['content'] : '' );
 		$instance['output_title']	= ( isset($new_instance['output_title']) && $new_instance['output_title'] == "1" ? 1 : 0 );
 
-		return $instance;
+		do_action( 'wp_editor_widget_update', $new_instance, $instance );
+
+ 	 	return apply_filters( 'wp_editor_widget_update_instance', $instance, $new_instance );
 
 	} // END update()
 
