@@ -10,7 +10,12 @@ Text Domain: wp-editor-widget
 Domain Path: /langs
 */
 
-
+//avoid direct calls to this file
+if ( !defined( 'ABSPATH' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
 
 // Setup actions
 add_action('admin_init', array('WPEditorWidget', 'admin_init'));
