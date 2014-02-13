@@ -85,7 +85,7 @@ class WP_Editor_Widget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		<p>
-			<a href="javascript:WPEditorWidget.showEditor('<?php echo $this->get_field_id( 'content' ); ?>');"><?php _e( 'Edit content', 'wp-editor-widget' ); ?></a>
+			<a href="javascript:WPEditorWidget.showEditor('<?php echo $this->get_field_id( 'content' ); ?>');" class="button widefat" style="text-align: center;"><span ><?php _e( 'Edit content', 'wp-editor-widget' ) ?></span></a>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('output_title'); ?>">
