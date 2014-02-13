@@ -101,6 +101,10 @@ class WPEditorWidget {
 	 */
 	public function widgets_init() {
 
+		if ( true == apply_filters( 'wp_editor_widget_remove_core_widget', false ) ) {
+			unregister_widget( 'WP_Widget_Text' );
+		}
+
 		register_widget('WP_Editor_Widget');
 
 	} // END widgets_init()
