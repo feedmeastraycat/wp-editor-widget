@@ -46,11 +46,11 @@ class WPEditorWidget {
 	 */
 	public function load_admin_assets() {
 
-		wp_register_script('wp-editor-widget-js', plugins_url('assets/js/admin.js', __FILE__), array('jquery'), self::VERSION);
-		wp_enqueue_script('wp-editor-widget-js');
+		wp_register_script( 'wp-editor-widget-js', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		wp_enqueue_script( 'wp-editor-widget-js' );
 
-		wp_register_style('wp-editor-widget-css', plugins_url('assets/css/admin.css', __FILE__), array(), self::VERSION);
-		wp_enqueue_style('wp-editor-widget-css');
+		wp_register_style( 'wp-editor-widget-css', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_style( 'wp-editor-widget-css' );
 
 		add_filter( 'wp_editor_widget_content', 'wptexturize' );
 		add_filter( 'wp_editor_widget_content', 'convert_smilies' );
@@ -82,9 +82,9 @@ class WPEditorWidget {
 			<div class="editor">
 				<?php
 				$settings = array(
-					'textarea_rows' => 15
+					'textarea_rows' => 15,
 				);
-				wp_editor('', 'wp-editor-widget', $settings);
+				wp_editor( '', 'wp-editor-widget', $settings );
 				?>
 				<p>
 					<a href="javascript:WPEditorWidget.updateWidgetAndCloseEditor(true);" class="button button-primary"><?php _e( 'Save and close', 'wp-editor-widget' ); ?></a>
@@ -105,7 +105,7 @@ class WPEditorWidget {
 			unregister_widget( 'WP_Widget_Text' );
 		}
 
-		register_widget('WP_Editor_Widget');
+		register_widget( 'WP_Editor_Widget' );
 
 	} // END widgets_init()
 
