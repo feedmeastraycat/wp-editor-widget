@@ -57,7 +57,6 @@ class WPEditorWidget {
 		add_filter( 'wp_editor_widget_content', 'convert_chars' );
 		add_filter( 'wp_editor_widget_content', 'wpautop' );
 		add_filter( 'wp_editor_widget_content', 'shortcode_unautop' );
-		add_filter( 'wp_editor_widget_content', 'prepend_attachment' );
 		add_filter( 'wp_editor_widget_content', 'do_shortcode', 11 );
 
 	} // END load_admin_assets()
