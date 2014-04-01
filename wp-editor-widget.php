@@ -4,7 +4,7 @@ Plugin Name: WP Editor Widget
 Plugin URI: http://oddalice.com/
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.4.1
+Version: 0.5.0
 Author URI: http://www.feedmeastraycat.net/
 Text Domain: wp-editor-widget
 Domain Path: /langs
@@ -27,7 +27,7 @@ class WPEditorWidget {
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.4.1";
+	const VERSION = "0.5.0";
 
 	/**
 	 * Action: init

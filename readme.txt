@@ -32,6 +32,18 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 
 == Changelog ==
 
+= 0.5.0 =
+* *Most of these changes thanks to [@cfoellmann](https://github.com/cfoellmann)*
+* Added filter `wp_editor_widget_ops`
+* Added filter `wp_editor_widget_control_ops`
+* Added filter `wp_editor_widget_update_instance`
+* Added action `wp_editor_widget_update`
+* Removed constant variable textdomain
+* Changed textdomain to wordpress.org plugin id name
+* Split widget class into it's own file
+* Limited asset loading to widgets.php
+* Changed code style to WP standard
+
 = 0.4.1 =
 * Lowered the z-index of the WP Editor overlay modal because image buttons (in the editor) wasn't showing because they had lower z-index (thanks nbspjr on WordPress.org http://wordpress.org/support/topic/edit-mediagallery-buttons-are-not-shown-1)
 
