@@ -35,7 +35,6 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 = 0.5.0 =
 * *Most of these changes thanks to [@cfoellmann](https://github.com/cfoellmann)*
 * Added filter `wp_editor_widget_ops`
-* Added filter `wp_editor_widget_control_ops`
 * Added filter `wp_editor_widget_update_instance`
 * Added action `wp_editor_widget_update`
 * Removed constant variable textdomain
