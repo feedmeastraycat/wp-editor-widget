@@ -19,23 +19,15 @@ class WP_Editor_Widget extends WP_Widget {
 		$widget_ops = apply_filters(
 			'wp_editor_widget_ops',
 			array(
-				'classname' 	=> 'wp-editor-widget',
+				'classname' 	=> 'WP_Editor_Widget',
 				'description' 	=> __( 'Arbitrary text, HTML or rich text through the standard WordPress visual editor.', 'wp-editor-widget' ),
 			)
 		);
 
- 	 	$control_ops = apply_filters(
-			'wp_editor_widget_control_ops',
-			array(
-				'id_base' => 'wp-editor-widget',
-			)
-		);
-
 		parent::__construct(
-			'wp_editor_widget',
+			'WP_Editor_Widget',
 			__( 'Rich text', 'wp-editor-widget' ),
-			$widget_ops,
-			$control_ops
+			$widget_ops
 		);
 
 	} // END __construct()
@@ -75,7 +67,7 @@ class WP_Editor_Widget extends WP_Widget {
 	 *
 	 * @param array $instance Previously saved values from database.
 	 */
-	public function form($instance)	{
+	public function form( $instance ) {
 
 		if ( isset($instance['title']) ) {
 			$title = $instance['title'];
@@ -95,7 +87,7 @@ class WP_Editor_Widget extends WP_Widget {
 		?>
 		<input type="hidden" id="<?php echo $this->get_field_id('content'); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" value="<?php echo esc_attr($content); ?>">
 		<p>
-			<label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title', 'wp-editor-widget' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'wp-editor-widget' ); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		<p>
