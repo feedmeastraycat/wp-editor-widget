@@ -58,8 +58,8 @@ class WP_Editor_Widget extends WP_Widget {
 
 		echo $before_widget;
 
-		if ($output_title == "1" && !empty($title)) {
-			echo $before_title.$title.$after_title;
+		if ( $output_title == "1" && !empty($title) ) {
+			echo $before_title . $title . $after_title;
 		}
 
 		echo $content;
@@ -77,21 +77,21 @@ class WP_Editor_Widget extends WP_Widget {
 	 */
 	public function form($instance)	{
 
-		if (isset($instance['title'])) {
+		if ( isset($instance['title']) ) {
 			$title = $instance['title'];
 		}
 		else {
 			$title = __( 'New title', 'wp-editor-widget' );
 		}
 
-		if (isset($instance['content'])) {
+		if ( isset($instance['content']) ) {
 			$content = $instance['content'];
 		}
 		else {
 			$content = "";
 		}
 
-		$output_title = (isset($instance['output_title']) && $instance['output_title'] == "1" ? true:false);
+		$output_title = ( isset($instance['output_title']) && $instance['output_title'] == "1" ? true : false );
 		?>
 		<input type="hidden" id="<?php echo $this->get_field_id('content'); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" value="<?php echo esc_attr($content); ?>">
 		<p>
