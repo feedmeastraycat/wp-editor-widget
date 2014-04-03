@@ -46,10 +46,12 @@ class WPEditorWidget {
 	 */
 	public function load_admin_assets() {
 
-		wp_register_script( 'wp-editor-widget-js', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		$dev = apply_filters( 'uber_media_debug_mode', SCRIPT_DEBUG ) ? '' : '.min';
+
+		wp_register_script( 'wp-editor-widget-js', plugins_url( "assets/js/admin{$dev}.js", __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_enqueue_script( 'wp-editor-widget-js' );
 
-		wp_register_style( 'wp-editor-widget-css', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), self::VERSION );
+		wp_register_style( 'wp-editor-widget-css', plugins_url( "assets/css/admin{$dev}.css", __FILE__ ), array(), self::VERSION );
 		wp_enqueue_style( 'wp-editor-widget-css' );
 
 		add_filter( 'wp_editor_widget_content', 'wptexturize' );
