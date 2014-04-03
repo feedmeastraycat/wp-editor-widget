@@ -4,6 +4,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		cssmin: {
+			options: {
+				banner: '/* WP Editor Widget <%= pkg.version %> - CSS */'
+			},
 			minify: {
 				expand: true,
 				cwd: 'assets/css/',
@@ -13,6 +16,9 @@ module.exports = function(grunt) {
 			}
 		},
 		uglify: {
+			options: {
+				banner: '/*! WP Editor Widget <%= pkg.version %> - JS */\n'
+			},
 			files: {
 				src: 'assets/js/admin.js',
 				dest: 'assets/js/',
