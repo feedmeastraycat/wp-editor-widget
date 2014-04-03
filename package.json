@@ -1,0 +1,13 @@
+{
+  "name": "wp-editor-widget",
+  "version": "0.5.0",
+  "author": "David Mårtensson <david@oddalice.se>",
+  "description": "WP Editor Widget adds a WYSIWYG widget using the wp_editor()",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-wp-i18n": ">=0.4.3"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

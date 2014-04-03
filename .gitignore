@@ -49,3 +49,5 @@ Thumbs.db
 cache/**/*
 logs/*
 .svn*
+node_modules
+npm-debug.log
