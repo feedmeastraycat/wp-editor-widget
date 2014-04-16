@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Editor Widget
-Plugin URI: http://oddalice.com/
+Plugin URI: https://github.com/feedmeastraycat/wp-editor-widget
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
 Version: 0.5.0
