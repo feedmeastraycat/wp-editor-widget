@@ -5,7 +5,7 @@ WP Editor Widget
 * Requires at least: 3.5.1
 * Tested up to: 3.9.0
 * Stable tag: 0.5.0
-* License: MIT
+* License: [MIT](https://github.com/feedmeastraycat/wp-editor-widget/blob/master/license.txt)
 
 WP Editor Widget adds a rich text widget where the content is edited using the standard WordPress visual editor.
 
@@ -19,6 +19,8 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 
 Screenshots
 -----------
+
+*Screenshots can be viewed on [WordPress.org](https://wordpress.org/plugins/wp-editor-widget/screenshots/)*
 
 1. The plugin adds a widget called "Rich text".
 2. In the widget you can add a title, edit the content through a link and choose to output the title or not.
