@@ -2,8 +2,8 @@
 Contributors: feedmeastraycat
 Tags: widget, wysiwyg, editor, rich text
 Requires at least: 3.5.1
-Tested up to: 3.8.1
-Stable tag: 0.4.1
+Tested up to: 3.9.0
+Stable tag: 0.5.0
 License: MIT
 
 	WP Editor Widget adds a rich text widget where the content is edited using the standard WordPress visual editor.
@@ -41,7 +41,8 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 * Changed textdomain to wordpress.org plugin id name
 * Split widget class into it's own file
 * Limited asset loading to widgets.php
-* Changed code style to WP standard
+* Changed PHP code style to WP standard
+* Changes for WP 3.9.0 (editor now works on the admin customization page as well as on the admin widgets page)
 
 = 0.4.1 =
 * Lowered the z-index of the WP Editor overlay modal because image buttons (in the editor) wasn't showing because they had lower z-index (thanks nbspjr on WordPress.org http://wordpress.org/support/topic/edit-mediagallery-buttons-are-not-shown-1)
