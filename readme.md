@@ -1,4 +1,5 @@
-=== WP Editor Widget ===
+WP Editor Widget
+================
 Contributors: feedmeastraycat
 Tags: widget, wysiwyg, editor, rich text
 Requires at least: 3.5.1
@@ -8,14 +9,16 @@ License: MIT
 
 	WP Editor Widget adds a rich text widget where the content is edited using the standard WordPress visual editor.
 
-== Description ==
+Description
+-----------
 
 This plugin adds a rich text widget where the content is edited using the standard WordPress visual editor which most users already are familiar with. 
 It uses the WP core function wp_editor() without adding a custom post type post for each widget making the widget quicker and simpler to edit.
 
 Feel free to help with developement or issue reporting on [Github](https://github.com/feedmeastraycat/wp-editor-widget)!
 
-== Screenshots ==
+Screenshots
+-----------
 
 1. The plugin adds a widget called "Rich text".
 2. In the widget you can add a title, edit the content through a link and choose to output the title or not.
@@ -24,15 +27,17 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 5. You can choose to display the title.
 6. The widget as displayed in Twenty Fourteen with title output turned on.
 
-== Installation ==
+Installation
+------------
 
 1. Extract the ZIP file and move the folder "wp-editor-widget", with it contents, 
    to `/wp-content/plugins/` in your WordPress installation
 2. Activate the pluing under 'Plugins' in the WordPress admin area
 
-== Changelog ==
+Changelog
+---------
 
-= 0.5.0 =
+### 0.5.0
 * *This is a big change, please file an issue on [Github](https://github.com/feedmeastraycat/wp-editor-widget) if you find anything weird!*
 * Changes for WP 3.9.0 (editor now works on the admin customization page as well as on the admin widgets page)
 * *Most of the following changes thanks to [@cfoellmann](https://github.com/cfoellmann):*
@@ -45,31 +50,31 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 * Limited asset loading to widgets.php
 * Changed PHP code style to WP standard
 
-= 0.4.1 =
+### 0.4.1
 * Lowered the z-index of the WP Editor overlay modal because image buttons (in the editor) wasn't showing because they had lower z-index (thanks nbspjr on WordPress.org http://wordpress.org/support/topic/edit-mediagallery-buttons-are-not-shown-1)
 
-= 0.4.0 =
+### 0.4.0
 * Added standard WP functions wptexturize, convert_smilies, convert_chars, wpautop, shortcode_unautop, prepend_attachment, do_shortcode to the wp_editor_widget_content filter (thanks danieliser on WordPress.org http://profiles.wordpress.org/danieliser/)
 
-= 0.3.1 =
+### 0.3.1
 * Updated the Swedish translation
 * Moved load_plugin_textdomain() for translation to the plugins_loaded action to make sure the widget is correctly translated.
 
-= 0.3.0 =
+### 0.3.0
 * Changed the name of the widget to "Rich text" and the description to a less "techy" text (thanks /u/actionscripted on Reddit http://tinyurl.com/lnm99yj) for a UI more similar to the core widgets
 * Tested in WP 3.6
 
-= 0.2.1 =
+### 0.2.1
 * CSS bug fix for hide button on WYSIWYG overlay
 * JS bug fix on get and set wpeditor content
 
-= 0.2.0 =
+### 0.2.0
 * Changed the WYSIWYG overlay button from "Update and close" to a primary button called "Save and close"
 * Changed so that the widget is saved when closing the WYSIWYG overlay
 * Added pot translation file and Swedish translation (contact me if you wish to help translate, david.martensson@gmail.com)
 
-= 0.1.1 =
+### 0.1.1
 * CSS fix for widget editor close button
 
-= 0.1.0 =
+### 0.1.0
 * First stable proof of concept version.
