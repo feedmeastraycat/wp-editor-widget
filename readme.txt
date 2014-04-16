@@ -33,7 +33,9 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 == Changelog ==
 
 = 0.5.0 =
-* *Most of these changes thanks to [@cfoellmann](https://github.com/cfoellmann)*
+* *This is a big change, please file an issue on [Github](https://github.com/feedmeastraycat/wp-editor-widget) if you find anything weird!*
+* Changes for WP 3.9.0 (editor now works on the admin customization page as well as on the admin widgets page)
+* *Most of the following changes thanks to [@cfoellmann](https://github.com/cfoellmann):*
 * Added filter `wp_editor_widget_ops`
 * Added filter `wp_editor_widget_update_instance`
 * Added action `wp_editor_widget_update`
@@ -42,7 +44,6 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 * Split widget class into it's own file
 * Limited asset loading to widgets.php
 * Changed PHP code style to WP standard
-* Changes for WP 3.9.0 (editor now works on the admin customization page as well as on the admin widgets page)
 
 = 0.4.1 =
 * Lowered the z-index of the WP Editor overlay modal because image buttons (in the editor) wasn't showing because they had lower z-index (thanks nbspjr on WordPress.org http://wordpress.org/support/topic/edit-mediagallery-buttons-are-not-shown-1)
