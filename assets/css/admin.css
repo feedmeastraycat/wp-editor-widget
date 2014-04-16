@@ -4,7 +4,7 @@
 	left: 30px;
 	right: 30px;
 	bottom: 30px;
-	z-index: 151000;
+	z-index: 50100;
 	background: #fff;
 }
 #wp-editor-widget-backdrop {
@@ -16,7 +16,7 @@
 	min-height: 360px;
 	background: #000;
 	opacity: .7;
-	z-index: 150000;
+	z-index: 50000;
 }
 #wp-editor-widget-container .close {
 	position: absolute;
