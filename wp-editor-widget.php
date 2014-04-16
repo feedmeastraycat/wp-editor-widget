@@ -36,13 +36,16 @@ class WPEditorWidget {
 
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_action( 'load-widgets.php', array( $this, 'load_admin_assets' ) );
-		add_action( 'widgets_admin_page', array( $this, 'widgets_admin_page' ), 100 );
+		add_action( 'load-customize.php', array( $this, 'load_admin_assets' ) );
+		add_action( 'widgets_admin_page', array( $this, 'output_wp_editor_widget_html' ), 100 );
+		add_action( 'customize_controls_print_footer_scripts', array( $this, 'output_wp_editor_widget_html' ) );
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
 
 	} // END __construct()
 
 	/**
 	 * Action: load-widgets.php
+	 * Action: load-customize.php
 	 */
 	public function load_admin_assets() {
 
@@ -70,11 +73,13 @@ class WPEditorWidget {
 		load_plugin_textdomain( 'wp-editor-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
 
 	} // END plugins_loaded()
-
+	
 	/**
 	 * Action: widgets_admin_page
+	 * Action: customize_controls_print_footer_scripts
 	 */
-	public function widgets_admin_page() {
+	public function output_wp_editor_widget_html() {
+		
 		?>
 		<div id="wp-editor-widget-container" style="display: none;">
 			<a class="close" href="javascript:WPEditorWidget.hideEditor();" title="<?php esc_attr_e( 'Close', 'wp-editor-widget' ); ?>"><span class="icon"></span></a>
@@ -92,8 +97,8 @@ class WPEditorWidget {
 		</div>
 		<div id="wp-editor-widget-backdrop" style="display: none;"></div>
 		<?php
-
-	} // END widgets_admin_page()
+		
+	} // END output_wp_editor_widget_html
 
 	/**
 	 * Action: widgets_init
