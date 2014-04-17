@@ -54,11 +54,13 @@ WPEditorWidget = {
 	 */
 	setEditorContent: function(contentId) {
 		var editor = tinyMCE.EditorManager.get('wp-editor-widget');
-		if (typeof editor == "undefined") {
-			jQuery('#wp-editor-widget').val(jQuery('#'+ contentId).val());
+		var content = jQuery('#'+ contentId).val();
+
+		if (typeof editor == "undefined" || editor == null || editor.isHidden()) {
+			jQuery('#wp-editor-widget').val(content);
 		}
 		else {
-			editor.setContent(jQuery('#'+ contentId).val());
+			editor.setContent(content);
 		}
 	},
 	
@@ -68,12 +70,14 @@ WPEditorWidget = {
 	updateWidgetAndCloseEditor: function() {
 		var editor = tinyMCE.EditorManager.get('wp-editor-widget');
 
-		if (typeof editor == "undefined") {
-			jQuery('#'+ this.currentContentId).val(jQuery('#wp-editor-widget').val());
+		if (typeof editor == "undefined" || editor == null || editor.isHidden()) {
+			var content = jQuery('#wp-editor-widget').val();
 		}
 		else {
-			jQuery('#'+ this.currentContentId).val(editor.getContent());
+			var content = editor.getContent();
 		}
+
+		jQuery('#'+ this.currentContentId).val(content);
 		
 		// customize.php
 		if (this.currentEditorPage == "wp-customizer") {
