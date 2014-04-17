@@ -33,7 +33,9 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 == Changelog ==
 
 = 0.5.1
-* Enqueue editor js on actions `load-widgets.php` and `load-customize.php` (Bugfix: Couldn't switch to plain text on customize.php)
+* Bugfix: Couldn't switch to plain text on customize.php ([Issue #27853](https://core.trac.wordpress.org/ticket/27853))
+* Bugfix: JS errors that could appear depending on if you loaded the editor in wysiwyg or plain text
+* Bugfix: Didn't store plain text widget content correctly
 
 = 0.5.0 =
 * *This is a big change, please file an issue on [Github](https://github.com/feedmeastraycat/wp-editor-widget) if you find anything weird!*
