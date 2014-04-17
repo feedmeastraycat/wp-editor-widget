@@ -32,7 +32,7 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 
 == Changelog ==
 
-= 0.5.1
+= 0.5.1 =
 * Bugfix: Couldn't switch to plain text on customize.php ([Issue #27853](https://core.trac.wordpress.org/ticket/27853))
 * Bugfix: JS errors that could appear depending on if you loaded the editor in wysiwyg or plain text
 * Bugfix: Didn't store plain text widget content correctly
