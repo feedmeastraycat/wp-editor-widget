@@ -4,7 +4,7 @@ Plugin Name: WP Editor Widget
 Plugin URI: https://github.com/feedmeastraycat/wp-editor-widget
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.5.1
+Version: 0.5.2
 Author URI: http://www.feedmeastraycat.net/
 Text Domain: wp-editor-widget
 Domain Path: /langs
@@ -27,7 +27,7 @@ class WPEditorWidget {
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.5.1";
+	const VERSION = "0.5.2";
 
 	/**
 	 * Action: init
@@ -106,8 +106,10 @@ class WPEditorWidget {
 	 */
 	public function customize_controls_print_footer_scripts() {
 	
-		// Because of https://core.trac.wordpress.org/ticket/27853		
-		if ( class_exists( '_WP_Editors' ) ) {
+		// Because of https://core.trac.wordpress.org/ticket/27853
+		// Which was fixed in 3.9.1 so we only need this on earlier versions
+		$wp_version = get_bloginfo( 'version' );
+		if ( version_compare( $wp_version, '3.9.1', '<' ) && class_exists( '_WP_Editors' ) ) {
 			_WP_Editors::enqueue_scripts();
 		}
 		
