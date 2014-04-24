@@ -44,6 +44,10 @@
 	margin: 50px;
 }
 
+#available-widgets [class*=wp_editor_widget] .widget-title:before {
+	content: "\f478";
+}
+
 /**
  * HiDPI Displays
  */
