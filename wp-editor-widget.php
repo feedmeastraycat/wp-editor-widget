@@ -4,7 +4,7 @@ Plugin Name: WP Editor Widget
 Plugin URI: https://github.com/feedmeastraycat/wp-editor-widget
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
 Author: David M&aring;rtensson, Odd Alice
-Version: 0.5.2
+Version: 0.5.3
 Author URI: http://www.feedmeastraycat.net/
 Text Domain: wp-editor-widget
 Domain Path: /langs
@@ -27,7 +27,7 @@ class WPEditorWidget {
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.5.2";
+	const VERSION = "0.5.3";
 
 	/**
 	 * Action: init
@@ -41,6 +41,13 @@ class WPEditorWidget {
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'output_wp_editor_widget_html' ), 1 );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_controls_print_footer_scripts' ), 2 );
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
+		
+		add_filter( 'wp_editor_widget_content', 'wptexturize' );
+		add_filter( 'wp_editor_widget_content', 'convert_smilies' );
+		add_filter( 'wp_editor_widget_content', 'convert_chars' );
+		add_filter( 'wp_editor_widget_content', 'wpautop' );
+		add_filter( 'wp_editor_widget_content', 'shortcode_unautop' );
+		add_filter( 'wp_editor_widget_content', 'do_shortcode', 11 );
 
 	} // END __construct()
 
@@ -55,13 +62,6 @@ class WPEditorWidget {
 
 		wp_register_style( 'wp-editor-widget-css', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), self::VERSION );
 		wp_enqueue_style( 'wp-editor-widget-css' );
-
-		add_filter( 'wp_editor_widget_content', 'wptexturize' );
-		add_filter( 'wp_editor_widget_content', 'convert_smilies' );
-		add_filter( 'wp_editor_widget_content', 'convert_chars' );
-		add_filter( 'wp_editor_widget_content', 'wpautop' );
-		add_filter( 'wp_editor_widget_content', 'shortcode_unautop' );
-		add_filter( 'wp_editor_widget_content', 'do_shortcode', 11 );
 
 	} // END load_admin_assets()
 
