@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WP Editor Widget 0.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-08 11:00+0100\n"
-"PO-Revision-Date: 2014-06-07 00:07+0100\n"
+"PO-Revision-Date: 2014-06-07 00:20+0100\n"
 "Last-Translator: ohaucke <ohaucke@gadean.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -31,9 +31,8 @@ msgid "Rich text"
 msgstr "Rich Text"
 
 #: wp-editor-widget.php:114
-#, fuzzy
 msgid "Arbitrary text, HTML or rich text through the standard WordPress visual editor."
-msgstr "Beliebige Texte, HTML oder Rich Texte mit dem Standard WordPress Editor."
+msgstr "Beliebiger Text, HTML oder Rich Text mit dem Standard WordPress Editor."
 
 #: wp-editor-widget.php:158
 msgid "New title"
