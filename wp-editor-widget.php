@@ -87,7 +87,7 @@ class WPEditorWidget {
 			<div class="editor">
 				<?php
 				$settings = array(
-					'textarea_rows' => 15,
+					'textarea_rows' => 15
 				);
 				wp_editor( '', 'wp-editor-widget', $settings );
 				?>
