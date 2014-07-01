@@ -17,6 +17,11 @@ It uses the WP core function wp_editor() without adding a custom post type post 
 
 Feel free to help with developement or issue reporting on [Github](https://github.com/feedmeastraycat/wp-editor-widget)!
 
+### Languages
+* English
+* Swedish
+* German
+
 Screenshots
 -----------
 
