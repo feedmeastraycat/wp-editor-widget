@@ -87,9 +87,9 @@ class WPEditorWidget {
 			<div class="editor">
 				<?php
 				$settings = array(
-					'textarea_rows' => 15,
+					'textarea_rows' => 20,
 				);
-				wp_editor( '', 'wp-editor-widget', $settings );
+				wp_editor( '', 'wpeditorwidget', $settings );
 				?>
 				<p>
 					<a href="javascript:WPEditorWidget.updateWidgetAndCloseEditor(true);" class="button button-primary"><?php _e( 'Save and close', 'wp-editor-widget' ); ?></a>

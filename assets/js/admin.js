@@ -53,25 +53,23 @@ WPEditorWidget = {
 	 * Set editor content
 	 */
 	setEditorContent: function(contentId) {
-		var editor = tinyMCE.EditorManager.get('wp-editor-widget');
+		var editor = tinyMCE.EditorManager.get('wpeditorwidget');
 		var content = jQuery('#'+ contentId).val();
 
-		if (typeof editor == "undefined" || editor == null || editor.isHidden()) {
-			jQuery('#wp-editor-widget').val(content);
-		}
-		else {
+		if (typeof editor == "object" && editor !== null) {
 			editor.setContent(content);
 		}
+		jQuery('#wpeditorwidget').val(content);
 	},
 	
 	/**
 	 * Update widget and close the editor
 	 */
 	updateWidgetAndCloseEditor: function() {
-		var editor = tinyMCE.EditorManager.get('wp-editor-widget');
+		var editor = tinyMCE.EditorManager.get('wpeditorwidget');
 
 		if (typeof editor == "undefined" || editor == null || editor.isHidden()) {
-			var content = jQuery('#wp-editor-widget').val();
+			var content = jQuery('#wpeditorwidget').val();
 		}
 		else {
 			var content = editor.getContent();
