@@ -35,8 +35,7 @@ class WPEditorWidget {
 	public function __construct() {
 
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
-		add_action( 'load-widgets.php', array( $this, 'load_admin_assets' ) );
-		add_action( 'load-customize.php', array( $this, 'load_admin_assets' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_assets' ) );
 		add_action( 'widgets_admin_page', array( $this, 'output_wp_editor_widget_html' ), 100 );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'output_wp_editor_widget_html' ), 1 );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_controls_print_footer_scripts' ), 2 );
@@ -55,13 +54,18 @@ class WPEditorWidget {
 	 * Action: load-widgets.php
 	 * Action: load-customize.php
 	 */
-	public function load_admin_assets() {
+	public function load_admin_assets( $hook ) {
 
-		wp_register_script( 'wp-editor-widget-js', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), self::VERSION );
-		wp_enqueue_script( 'wp-editor-widget-js' );
+		$pages       = array( 'widgets.php', 'customize.php', );
+		$admin_pages = apply_filters( 'wp_editor_widget_pages', $pages );
 
-		wp_register_style( 'wp-editor-widget-css', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), self::VERSION );
-		wp_enqueue_style( 'wp-editor-widget-css' );
+		if ( in_array( $hook, $admin_pages ) ) {
+			wp_register_script( 'wp-editor-widget-js', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+			wp_enqueue_script( 'wp-editor-widget-js' );
+
+			wp_register_style( 'wp-editor-widget-css', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), self::VERSION );
+			wp_enqueue_style( 'wp-editor-widget-css' );
+		}
 
 	} // END load_admin_assets()
 
