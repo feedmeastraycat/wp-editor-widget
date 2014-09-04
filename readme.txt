@@ -2,7 +2,7 @@
 Contributors: feedmeastraycat
 Tags: widget, wysiwyg, editor, rich text
 Requires at least: 3.5.1
-Tested up to: 3.9.1
+Tested up to: 4.0.0
 Stable tag: 0.5.4
 License: MIT
 
