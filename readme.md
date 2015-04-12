@@ -3,7 +3,7 @@ WP Editor Widget
 * Contributors: feedmeastraycat
 * Tags: widget, wysiwyg, editor, rich text
 * Requires at least: 3.5.1
-* Tested up to: 4.1.0
+* Tested up to: 4.1.1
 * Stable tag: 0.5.4
 * License: [MIT](https://github.com/feedmeastraycat/wp-editor-widget/blob/master/license.txt)
 
