@@ -46,6 +46,7 @@ class WP_Editor_Widget extends WP_Widget {
 
 		$title			= apply_filters( 'wp_editor_widget_title', $instance['title'] );
 		$output_title	= apply_filters( 'wp_editor_widget_output_title', $instance['output_title'] );
+		$content        = apply_filters( 'wp_editor_widget_content', $instance['content'] );
 		
 		// WPML support?
 		$show = true; // default show
