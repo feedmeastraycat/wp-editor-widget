@@ -58,7 +58,7 @@ class WP_Editor_Widget extends WP_Widget {
 		}
 
 #		if($show) {
-        if(!function_exists("icl_get_languages") || (function_exists("icl_get_languages") && $language == icl_get_current_language())) {	    
+        if(!function_exists("icl_get_languages") || (function_exists("icl_get_languages") && $show)) {	    
     		echo $before_widget;
     
     		if ( $output_title == "1" && !empty($title) ) {
