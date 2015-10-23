@@ -44,9 +44,12 @@ class WP_Editor_Widget extends WP_Widget {
 
 		extract( $args );
 
+		// WPML support
+		$content		= apply_filters( 'wpml_translate_string', $instance['content'], $this->id . '-content', self::getWpmlPackage());
+
 		$title			= apply_filters( 'wp_editor_widget_title', $instance['title'] );
 		$output_title	= apply_filters( 'wp_editor_widget_output_title', $instance['output_title'] );
-		$content		= apply_filters( 'wp_editor_widget_content', $instance['content'] );
+		$content		= apply_filters( 'wp_editor_widget_content', $content );
 
 		echo $before_widget;
 
@@ -122,8 +125,21 @@ class WP_Editor_Widget extends WP_Widget {
 
 		do_action( 'wp_editor_widget_update', $new_instance, $instance );
 
+		// WPML support
+		do_action( 'wpml_register_string', $instance['content'], $this->id . '-content', self::getWpmlPackage(), 'WP Editor Widget - Content', 'AREA');
+
  	 	return apply_filters( 'wp_editor_widget_update_instance', $instance, $new_instance );
 
 	} // END update()
+
+	public static function getWpmlPackage() {
+
+		return array(
+			'kind' => 'WP Editor',
+			'name' => 'widget',
+			'title' => 'Widget',
+		);
+
+	} // END getWpmlPackage()
 
 } // END class WP_Editor_Widget
