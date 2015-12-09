@@ -2,7 +2,7 @@
 Contributors: feedmeastraycat
 Tags: widget, wysiwyg, editor, rich text
 Requires at least: 3.5.1
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: 0.5.5
 License: MIT
 
@@ -20,6 +20,7 @@ Feel free to help with developement or issue reporting on [Github](https://githu
 * Swedish
 * German
 * Danish
+* [More translations](https://translate.wordpress.org/projects/wp-plugins/wp-editor-widget)
 
 == Screenshots ==
 
