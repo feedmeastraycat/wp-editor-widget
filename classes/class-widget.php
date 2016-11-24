@@ -46,17 +46,29 @@ class WP_Editor_Widget extends WP_Widget {
 
 		$title			= apply_filters( 'wp_editor_widget_title', $instance['title'] );
 		$output_title	= apply_filters( 'wp_editor_widget_output_title', $instance['output_title'] );
-		$content		= apply_filters( 'wp_editor_widget_content', $instance['content'] );
-
-		echo $before_widget;
-
-		if ( $output_title == "1" && !empty($title) ) {
-			echo $before_title . $title . $after_title;
+		$content        = apply_filters( 'wp_editor_widget_content', $instance['content'] );
+		
+		// WPML support?
+		$show = true; // default show
+		if(function_exists("icl_get_languages")) {
+            $language       = apply_filters( 'wp_editor_widget_language', $instance['language'] );
+            // check to se if the current language is the same as the option
+            // set to false if the language dos not match
+            $show = ($language == icl_get_current_language() ? true : false);
 		}
 
-		echo $content;
-
-		echo $after_widget;
+#		if($show) {
+        if(!function_exists("icl_get_languages") || (function_exists("icl_get_languages") && $show)) {	    
+    		echo $before_widget;
+    
+    		if ( $output_title == "1" && !empty($title) ) {
+    			echo $before_title . $title . $after_title;
+    		}
+    
+    		echo $content;
+    
+    		echo $after_widget;
+		}
 
 	} // END widget()
 
@@ -82,6 +94,11 @@ class WP_Editor_Widget extends WP_Widget {
 		else {
 			$content = "";
 		}
+		
+		// get WPML languages if WPML is there
+		if(function_exists("icl_get_languages")) {
+		    $language = $instance['language'];
+		}
 
 		$output_title = ( isset($instance['output_title']) && $instance['output_title'] == "1" ? true : false );
 		?>
@@ -98,6 +115,20 @@ class WP_Editor_Widget extends WP_Widget {
 				<input type="checkbox" id="<?php echo $this->get_field_id('output_title'); ?>" name="<?php echo $this->get_field_name('output_title'); ?>" value="1" <?php checked($output_title, true) ?>> <?php _e( 'Output title', 'wp-editor-widget' ); ?>
 			</label>
 		</p>
+		<?php if(function_exists("icl_get_languages")) : ?>
+		<p>
+            <label for="<?php echo $this->get_field_id( 'language' ); ?>"><?php _e('Language', 'wp-editor-widget'); ?>:</label>
+            <select id="<?php echo $this->get_field_id( 'language' ); ?>" name="<?php echo $this->get_field_name( 'language' ); ?>">
+            <?php
+                // show all active languages in WPML 
+                $languages = icl_get_languages('skip_missing=0&orderby=code');
+                foreach ($languages as $id => $lang) {
+                    ?><option value="<?php echo $lang['language_code']?>" <?php if($instance['language'] == $lang['language_code']) { echo " selected"; } ?>><?php echo $lang['native_name']?></option><?php                     
+                }
+            ?>
+            </select>
+		</p>
+		<?php endif; ?>
 		<?php
 
 	} // END form()
@@ -119,8 +150,9 @@ class WP_Editor_Widget extends WP_Widget {
 		$instance['title']			= ( !empty($new_instance['title']) ? strip_tags( $new_instance['title']) : '' );
 		$instance['content']		= ( !empty($new_instance['content']) ? $new_instance['content'] : '' );
 		$instance['output_title']	= ( isset($new_instance['output_title']) && $new_instance['output_title'] == "1" ? 1 : 0 );
+        $instance['language']       = ( isset($new_instance['language']) ? $new_instance['language'] : '');
 
-		do_action( 'wp_editor_widget_update', $new_instance, $instance );
+        do_action( 'wp_editor_widget_update', $new_instance, $instance );
 
  	 	return apply_filters( 'wp_editor_widget_update_instance', $instance, $new_instance );
 
