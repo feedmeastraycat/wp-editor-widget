@@ -49,7 +49,7 @@ class WP_Editor_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-
+		
 		extract( $args );
 
 		$title			= apply_filters( 'wp_editor_widget_title', $instance['title'] );
@@ -66,15 +66,19 @@ class WP_Editor_Widget extends WP_Widget {
 		
 		if ( $show ) {
 	
-			echo $before_widget;
+			$default_html = $before_widget;
 	
 			if ( $output_title == "1" && !empty($title) ) {
-				echo $before_title . $title . $after_title;
+				$default_html .= $before_title . $title . $after_title;
 			}
 	
-			echo $content;
+			$default_html .= $content;
 	
-			echo $after_widget;
+			$default_html .= $after_widget;
+			
+			$html = apply_filters( 'wp_editor_widget_html', $default_html, $id, $before_widget, $after_widget, $output_title, $title, $before_title, $after_title, $content );
+			
+			echo $html;
 			
 		}
 
