@@ -4,7 +4,7 @@ WP Editor Widget
 * Tags: widget, wysiwyg, editor, rich text, wpml
 * Requires at least: 3.5.1
 * Tested up to: 4.7.2
-* Stable tag: 0.605
+* Stable tag: 0.6.0
 * License: [MIT](https://github.com/feedmeastraycat/wp-editor-widget/blob/master/license.txt)
 
 WP Editor Widget adds a rich text widget where the content is edited using the standard WordPress visual editor.
