@@ -1,6 +1,6 @@
 === WP Editor Widget ===
 Contributors: feedmeastraycat
-Tags: widget, wysiwyg, editor, rich text
+Tags: widget, wysiwyg, editor, rich text, wpml
 Requires at least: 3.5.1
 Tested up to: 4.7.2
 Stable tag: 0.6.0
