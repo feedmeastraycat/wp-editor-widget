@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/feedmeastraycat/wp-editor-widget/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/feedmeastraycat/wp-editor-widget/?branch=master)
+
 WP Editor Widget
 ================
 * Contributors: feedmeastraycat
@@ -8,8 +10,6 @@ WP Editor Widget
 * License: [MIT](https://github.com/feedmeastraycat/wp-editor-widget/blob/master/license.txt)
 
 WP Editor Widget adds a rich text widget where the content is edited using the standard WordPress visual editor.
-
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/feedmeastraycat/wp-editor-widget/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/feedmeastraycat/wp-editor-widget/?branch=master)
 
 Description
 -----------
