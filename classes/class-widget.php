@@ -107,23 +107,23 @@ class WP_Editor_Widget extends WP_Widget {
 
 		$output_title = ( isset( $instance['output_title'] ) && '1' == $instance['output_title'] ? true : false );
 		?>
-		<input type="hidden" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" value="<?php echo esc_attr( $content ); ?>">
+		<input type="hidden" id="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content' ) ); ?>" value="<?php echo esc_attr( $content ); ?>">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'wp-editor-widget' ); ?>:</label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title', 'wp-editor-widget' ); ?>:</label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<a href="javascript:WPEditorWidget.showEditor('<?php echo $this->get_field_id( 'content' ); ?>');" class="button"><?php _e( 'Edit content', 'wp-editor-widget' ) ?></a>
+			<a href="javascript:WPEditorWidget.showEditor('<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>');" class="button"><?php _e( 'Edit content', 'wp-editor-widget' ) ?></a>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'output_title' ); ?>">
-				<input type="checkbox" id="<?php echo $this->get_field_id( 'output_title' ); ?>" name="<?php echo $this->get_field_name( 'output_title' ); ?>" value="1" <?php checked( $output_title, true ) ?>> <?php _e( 'Output title', 'wp-editor-widget' ); ?>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'output_title' ) ); ?>">
+				<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'output_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'output_title' ) ); ?>" value="1" <?php checked( $output_title, true ) ?>> <?php _e( 'Output title', 'wp-editor-widget' ); ?>
 			</label>
 		</p>
 		<?php if ( function_exists( 'icl_get_languages' ) ) : $languages = icl_get_languages( 'skip_missing=0&orderby=code' ); ?>
-			<label for="<?php echo $this->get_field_id( 'language' ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'language' ) ); ?>">
 				<?php _e( 'Language', 'wp-editor-widget' ); ?>:
-				<select id="<?php echo $this->get_field_id( 'language' ); ?>" name="<?php echo $this->get_field_name( 'language' ); ?>">
+				<select id="<?php echo esc_attr( $this->get_field_id( 'language' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'language' ) ); ?>">
 					<?php foreach ( $languages as $id => $lang ) : ?>
 						<option value="<?php echo esc_attr( $lang['language_code'] ) ?>" <?php selected( $instance['language'], $lang['language_code'] ) ?>><?php echo esc_attr( $lang['native_name'] ) ?></option>
 					<?php endforeach; ?>

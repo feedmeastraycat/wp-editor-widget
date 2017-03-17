@@ -86,7 +86,7 @@ window.WPEditorWidget = {
 		// customize.php
 		if (this.currentEditorPage == "wp-customizer") {
 			var widget_id = jQuery('#'+ this.currentContentId).closest('div.form').find('input.widget-id').val();
-			var widget_form_control = wp.customize.Widgets.getWidgetFormControlForWidget( widget_id )
+			var widget_form_control = wp.customize.Widgets.getWidgetFormControlForWidget( widget_id );
 			widget_form_control.updateWidget();
 		}
 		
