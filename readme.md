@@ -9,6 +9,8 @@ WP Editor Widget
 
 WP Editor Widget adds a rich text widget where the content is edited using the standard WordPress visual editor.
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/feedmeastraycat/wp-editor-widget/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/feedmeastraycat/wp-editor-widget/?branch=master)
+
 Description
 -----------
 
