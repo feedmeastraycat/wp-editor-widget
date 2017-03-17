@@ -116,7 +116,7 @@ class WP_Editor_Widget extends WP_Widget {
 			<a href="javascript:WPEditorWidget.showEditor('<?php echo $this->get_field_id( 'content' ); ?>');" class="button"><?php _e( 'Edit content', 'wp-editor-widget' ) ?></a>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('output_title'); ?>">
+			<label for="<?php echo $this->get_field_id( 'output_title' ); ?>">
 				<input type="checkbox" id="<?php echo $this->get_field_id( 'output_title' ); ?>" name="<?php echo $this->get_field_name( 'output_title' ); ?>" value="1" <?php checked( $output_title, true ) ?>> <?php _e( 'Output title', 'wp-editor-widget' ); ?>
 			</label>
 		</p>
@@ -150,7 +150,7 @@ class WP_Editor_Widget extends WP_Widget {
 
 		$instance = array();
 
-		$instance['title']			= ( ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title']) : '' );
+		$instance['title']			= ( ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '' );
 		$instance['content']		= ( ! empty( $new_instance['content'] ) ? $new_instance['content'] : '' );
 		$instance['output_title']	= ( isset( $new_instance['output_title'] ) && '1' == $new_instance['output_title'] ? 1 : 0 );
 		

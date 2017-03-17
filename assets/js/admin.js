@@ -1,5 +1,3 @@
-/* global tinyMCE: true, wp: true, wpWidgets: true */
-
 /**
  * WP Editor Widget object
  */
@@ -54,6 +52,8 @@ window.WPEditorWidget = {
 	 * Set editor content
 	 */
 	setEditorContent: function(contentId) {
+		/** global: tinyMCE */
+		
 		var editor = tinyMCE.EditorManager.get('wpeditorwidget');
 		var content = jQuery('#'+ contentId).val();
 
@@ -67,6 +67,10 @@ window.WPEditorWidget = {
 	 * Update widget and close the editor
 	 */
 	updateWidgetAndCloseEditor: function() {
+		/** global: tinyMCE */
+		/** global: wp */
+		/** global: wpWidgets */
+		
 		var editor = tinyMCE.EditorManager.get('wpeditorwidget');
 
 		var content;
