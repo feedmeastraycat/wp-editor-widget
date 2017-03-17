@@ -11,7 +11,7 @@ Domain Path: /langs
 */
 
 //avoid direct calls to this file
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -27,7 +27,7 @@ class WPEditorWidget {
 	/**
 	 * @var string
 	 */
-	const VERSION = "0.6.0";
+	const VERSION = '0.6.0';
 
 	/**
 	 * Action: init

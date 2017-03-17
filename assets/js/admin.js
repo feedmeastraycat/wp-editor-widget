@@ -1,7 +1,9 @@
+/* global tinyMCE: true, wp: true, wpWidgets: true */
+
 /**
  * WP Editor Widget object
  */
-WPEditorWidget = {
+window.WPEditorWidget = {
 	
 	/** 
 	 * @var string
@@ -20,7 +22,6 @@ WPEditorWidget = {
 
 	/**
 	 * Show the editor
-	 * @param string contentId
 	 */
 	showEditor: function(contentId) {
 		jQuery('#wp-editor-widget-backdrop').show();
@@ -68,11 +69,12 @@ WPEditorWidget = {
 	updateWidgetAndCloseEditor: function() {
 		var editor = tinyMCE.EditorManager.get('wpeditorwidget');
 
-		if (typeof editor == "undefined" || editor == null || editor.isHidden()) {
-			var content = jQuery('#wpeditorwidget').val();
+		var content;
+		if (typeof editor == "undefined" || editor === null || editor.isHidden()) {
+			content = jQuery('#wpeditorwidget').val();
 		}
 		else {
-			var content = editor.getContent();
+			content = editor.getContent();
 		}
 
 		jQuery('#'+ this.currentContentId).val(content);

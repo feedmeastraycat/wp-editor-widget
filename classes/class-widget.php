@@ -1,6 +1,6 @@
 <?php
 //avoid direct calls to this file
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -18,10 +18,10 @@ class WP_Editor_Widget extends WP_Widget {
 		
 		// WPML support?
 		if ( function_exists( 'icl_get_languages' ) ) {
-			$widget_name = __( 'Multilingual', 'wp-editor-widget' ) . ' ' . __( 'Rich text', 'wp-editor-widget' );
+			$widget_name = esc_html__( 'Multilingual', 'wp-editor-widget' ) . ' ' . esc_html__( 'Rich text', 'wp-editor-widget' );
 		}
 		else {
-			$widget_name = __( 'Rich text', 'wp-editor-widget' );
+			$widget_name = esc_html__( 'Rich text', 'wp-editor-widget' );
 		}
 
 		$widget_ops = apply_filters(
@@ -49,8 +49,6 @@ class WP_Editor_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		
-		extract( $args );
 
 		$title			= apply_filters( 'wp_editor_widget_title', $instance['title'] );
 		$output_title	= apply_filters( 'wp_editor_widget_output_title', $instance['output_title'] );
@@ -66,15 +64,15 @@ class WP_Editor_Widget extends WP_Widget {
 		
 		if ( $show ) {
 	
-			$default_html = $before_widget;
+			$default_html = $args['before_widget'];
 	
-			if ( $output_title == "1" && !empty($title) ) {
-				$default_html .= $before_title . $title . $after_title;
+			if ( '1' == $output_title && ! empty( $title ) ) {
+				$default_html .= $args['before_title'] . $title . $args['after_title'];
 			}
 	
 			$default_html .= $content;
 	
-			$default_html .= $after_widget;
+			$default_html .= $args['after_widget'];
 			
 			$html = apply_filters( 'wp_editor_widget_html', $default_html, $id, $instance, $before_widget, $after_widget, $output_title, $title, $before_title, $after_title, $content );
 			
@@ -93,38 +91,33 @@ class WP_Editor_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		if ( isset($instance['title']) ) {
+		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		}
 		else {
 			$title = __( 'New title', 'wp-editor-widget' );
 		}
 
-		if ( isset($instance['content']) ) {
+		if ( isset( $instance['content'] ) ) {
 			$content = $instance['content'];
 		}
 		else {
-			$content = "";
-		}
-		
-		// WPML support
-		if ( function_exists( 'icl_get_languages' ) ) {
-			$language = $instance['language'];
+			$content = '';
 		}
 
-		$output_title = ( isset($instance['output_title']) && $instance['output_title'] == "1" ? true : false );
+		$output_title = ( isset( $instance['output_title'] ) && '1' == $instance['output_title'] ? true : false );
 		?>
-		<input type="hidden" id="<?php echo $this->get_field_id('content'); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" value="<?php echo esc_attr($content); ?>">
+		<input type="hidden" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" value="<?php echo esc_attr( $content ); ?>">
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'wp-editor-widget' ); ?>:</label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
 			<a href="javascript:WPEditorWidget.showEditor('<?php echo $this->get_field_id( 'content' ); ?>');" class="button"><?php _e( 'Edit content', 'wp-editor-widget' ) ?></a>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('output_title'); ?>">
-				<input type="checkbox" id="<?php echo $this->get_field_id('output_title'); ?>" name="<?php echo $this->get_field_name('output_title'); ?>" value="1" <?php checked( $output_title, true ) ?>> <?php _e( 'Output title', 'wp-editor-widget' ); ?>
+				<input type="checkbox" id="<?php echo $this->get_field_id( 'output_title' ); ?>" name="<?php echo $this->get_field_name( 'output_title' ); ?>" value="1" <?php checked( $output_title, true ) ?>> <?php _e( 'Output title', 'wp-editor-widget' ); ?>
 			</label>
 		</p>
 		<?php if ( function_exists( 'icl_get_languages' ) ) : $languages = icl_get_languages( 'skip_missing=0&orderby=code' ); ?>
@@ -157,13 +150,13 @@ class WP_Editor_Widget extends WP_Widget {
 
 		$instance = array();
 
-		$instance['title']			= ( !empty($new_instance['title']) ? strip_tags( $new_instance['title']) : '' );
-		$instance['content']		= ( !empty($new_instance['content']) ? $new_instance['content'] : '' );
-		$instance['output_title']	= ( isset($new_instance['output_title']) && $new_instance['output_title'] == "1" ? 1 : 0 );
+		$instance['title']			= ( ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title']) : '' );
+		$instance['content']		= ( ! empty( $new_instance['content'] ) ? $new_instance['content'] : '' );
+		$instance['output_title']	= ( isset( $new_instance['output_title'] ) && '1' == $new_instance['output_title'] ? 1 : 0 );
 		
 		// WPML support
 		if ( function_exists( 'icl_get_languages' )  ) {
-			$instance['language']   = ( isset($new_instance['language']) ? $new_instance['language'] : '');
+			$instance['language']   = ( isset( $new_instance['language'] ) ? $new_instance['language'] : '');
 		}
 
 		do_action( 'wp_editor_widget_update', $new_instance, $instance );
