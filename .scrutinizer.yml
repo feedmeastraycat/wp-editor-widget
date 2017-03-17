@@ -1,0 +1,34 @@
+# Scruitinizer Configuration
+# Profile: WP-Editor-Widget
+tools:
+
+	# Runs the JSHint static analysis tool (https://scrutinizer-ci.com/docs/tools/javascript/jshint/)
+	js_hint: true
+
+	# Runs PHP Code Sniffer
+	php_code_sniffer:
+		config:
+			standard: WordPress
+
+	# Runs the PHP CS Fixer (http://cs.sensiolabs.org/) (https://scrutinizer-ci.com/docs/tools/php/cs-fixer/)
+	# php_cs_fixer:
+	#	config: { level: psr2 }
+
+	# PHPLOC - PHP Lines of code
+	php_loc: true
+
+	# SensioLabs Security Checker (https://scrutinizer-ci.com/docs/tools/php/security-advisory-checker/)
+	sensiolabs_security_checker: true
+
+	# PHP Copy/Paste Detector (https://scrutinizer-ci.com/docs/tools/php/copy-paste-detector/)
+	php_cpd: true
+
+	# PHP PDepend (https://scrutinizer-ci.com/docs/tools/php/pdepend/)
+	# Analyzes the size and structure of a PHP project
+	php_pdepend: true
+
+	# PHP Analyzer (https://scrutinizer-ci.com/docs/tools/php/php-analyzer/)
+	php_analyzer: true
+
+	# External Code Coverage (https://scrutinizer-ci.com/docs/tools/external-code-coverage/)
+	# external_code_coverage: true
