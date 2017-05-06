@@ -74,9 +74,7 @@ class WP_Editor_Widget extends WP_Widget {
 	
 			$default_html .= $args['after_widget'];
 			
-			$html = apply_filters( 'wp_editor_widget_html', $default_html, $args['id'], $instance, $args['before_widget'], $args['after_widget'], $output_title, $title, $args['before_title'], $args['after_title'], $content );
-			
-			echo $html;
+			echo apply_filters( 'wp_editor_widget_html', $default_html, $args['id'], $instance, $args['before_widget'], $args['after_widget'], $output_title, $title, $args['before_title'], $args['after_title'], $content );
 			
 		}
 
