@@ -5,7 +5,7 @@ WP Editor Widget
 * Contributors: feedmeastraycat
 * Tags: widget, wysiwyg, editor, rich text, wpml
 * Requires at least: 3.5.1
-* Tested up to: 4.7.4
+* Tested up to: 4.9.4
 * Stable tag: 0.6.0
 * License: [MIT](https://github.com/feedmeastraycat/wp-editor-widget/blob/master/license.txt)
 
