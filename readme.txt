@@ -2,7 +2,7 @@
 Contributors: feedmeastraycat
 Tags: widget, wysiwyg, editor, rich text, wpml
 Requires at least: 3.5.1
-Tested up to: 4.9.4
+Tested up to: 5.0
 Stable tag: 0.6.0
 License: MIT
 
