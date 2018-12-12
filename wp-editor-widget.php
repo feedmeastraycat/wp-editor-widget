@@ -3,9 +3,9 @@
 Plugin Name: WP Editor Widget
 Plugin URI: https://github.com/feedmeastraycat/wp-editor-widget
 Description: WP Editor Widget adds a WYSIWYG widget using the wp_editor().
-Author: David M&aring;rtensson, Odd Alice
+Author: David M&aring;rtensson
 Version: 0.6.0
-Author URI: http://www.feedmeastraycat.net/
+Author URI: https://github.com/feedmeastraycat/wp-editor-widget
 Text Domain: wp-editor-widget
 Domain Path: /langs
 */
