@@ -10,7 +10,7 @@ License: MIT
 
 == Description ==
 
-**Note:** This plugin still works but it does not contain any features that the native Text widget have. The plugin is no longer in active developement.
+**Note:** This plugin still works but it doesn't really contain any major features that the native Text widget is missing. The plugin is no longer in active developement.
 
 This plugin adds a rich text widget where the content is edited using the standard WordPress visual editor which most users already are familiar with. 
 It uses the WP core function wp_editor() without adding a custom post type post for each widget making the widget quicker and simpler to edit.
